@@ -15,9 +15,7 @@ find_package(GLUT REQUIRED)
 if (OPENGL_FOUND)
   set(gl_LIBS ${gl_LIBS} ${OPENGL_LIBRARIES})
 endif(OPENGL_FOUND)
-if(APPLE)
-  find_package(X11 REQUIRED)
-endif(APPLE)
+find_package(X11 REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   moveit_core
@@ -41,9 +39,8 @@ if(NOT EIGEN3_INCLUDE_DIRS)
   set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 endif()
 
-find_package(OpenMP)
 find_package(octomap REQUIRED)
-find_package(OpenCV)
+find_package(OpenCV REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS
